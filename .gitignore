@@ -1,2 +1,5 @@
 DjangoTCC/
-teste.txt
+ClimaTempo/climaAgora.json
+ClimaTempo/clima5dias.json
+db.sqlite3
+ClimaTempo/minhachaveOW.py

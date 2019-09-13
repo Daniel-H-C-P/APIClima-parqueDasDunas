@@ -15,12 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import ClimaAgora
-from .views import Clima5dias
+from .views import ClimaParque
 
 	
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('ClimaAgora', ClimaAgora),
-    path('Clima5dias', Clima5dias),
+    path('ClimaParque', ClimaParque),    
 ]
