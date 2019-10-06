@@ -2,24 +2,72 @@
 
 
 import json 
+#import re
  
 #Para abrir o arquivo climaAgora
-with open('climaAgora.json') as f:
-  data = json.load(f)
- 
-#Lendo o arquivo
-for clima in data['weather'][0]['description']:
-    print(clima)
+def climanow():
+	with open('climaAgora.json') as f:
+		data = json.load(f)
+	#Lendo o arquivo
+	climaatual = data['weather'][0]['description']
+	#print('Clima atual:')
+	#print(climaatual)
+	return climaatual
+climanow()
+
 
 #Para abrir o arquivo clima5dias
-with open('clima5dias.json') as g:
-  data2 = json.load(g)
- 
-#Lendo o arquivo
-previsao = ""
-numheader = 0
-while numheader < 40:
-	climaprint = str(data2['list'][numheader]['dt_txt']) + " " + str(data2['list'][numheader]['weather'][0]['description'])  + '\n'
-	previsao += climaprint
-	numheader +=1
-print(previsao)
+def climaprev():
+	with open('clima5dias.json') as g:
+		data2 = json.load(g)
+	#Lendo o arquivo e criando uma lista
+	numheader = 0
+	previsao = []
+	while numheader < 40:
+		climaprint = (str(data2['list'][numheader]['dt_txt']).split( ))
+		climaprint.append(str(data2['list'][numheader]['weather'][0]['description']))
+		previsao.append(climaprint) 
+		numheader +=1
+	
+	#Criando uma lista de dias
+	dias = []
+	separador = 0
+	while separador < 40:
+		daynum = str(previsao[int(separador)][0])
+		dias.append(daynum)
+		separador +=1
+	diasuniq= list(set(dias))
+	diasuniq.sort()
+	#print(diasuniq)
+	#print(len(diasuniq))
+
+	# organizando tudo
+	prevorganizada = []
+	for x in diasuniq:
+		prevorganizada.append([])
+	y = 0
+	for item in previsao:
+		z = 0
+		while z < len(diasuniq):
+			if item[0] == diasuniq[z]:
+				prevorganizada[z].append(item)
+				z +=1
+			else:
+				z +=1
+				continue
+		y +=1		
+
+	#exemplo de exibição das informações:
+	#print("\nPrevisão para os próximos dias")
+	numx = 0
+	for num1 in prevorganizada:
+		print('\nDia {}'.format(prevorganizada[numx][0][0]))
+		for num2 in num1:
+			print(num2[1] + ": " + num2[2])
+		numx+=1
+	
+	#print("\nExemplo de exibição específica:")
+	#print(prevorganizada[2][0][2])
+	return prevorganizada
+
+climaprev()
