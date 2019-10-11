@@ -7,11 +7,11 @@
 	<title>Index</title>
 </head>
 <body>
-<div>"{{ clima }}"</div>
-<div>{{ prev }}</div>
-<div>"{{ prev }}"</div>
-<div>"{{ prev }}"</div>
-<div>"{{ prev }}"</div>
-<div>"{{ prev }}"</div>
+{% block content %}
+	<div>"{{ clima }}"</div>
+	{% for tempo in prev %}
+		<p>{{ tempo }}</p>
+	{% endfor %}
+{% endblock %}
 </body>
 </html>

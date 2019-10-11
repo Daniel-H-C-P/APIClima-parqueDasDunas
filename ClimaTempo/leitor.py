@@ -59,15 +59,26 @@ def climaprev():
 
 	#exemplo de exibição das informações:
 	#print("\nPrevisão para os próximos dias")
+	'''
 	numx = 0
 	for num1 in prevorganizada:
 		print('\nDia {}'.format(prevorganizada[numx][0][0]))
 		for num2 in num1:
 			print(num2[1] + ": " + num2[2])
 		numx+=1
-	
+	'''
+
+	prevfinal = ''
+	numx = 0
+	for num1 in prevorganizada:
+		prevfinal+= ('\n\nDia {}:'.format(prevorganizada[numx][0][0]))
+		for num2 in num1:
+			prevfinal+= '\n' + (num2[1] + ": " + num2[2])
+		numx +=1
+
 	#print("\nExemplo de exibição específica:")
 	#print(prevorganizada[2][0][2])
+	print(prevfinal)
 	return prevorganizada
 
 climaprev()

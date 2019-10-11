@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from .views import ClimaParque2
-
+from .views import ClimaParque3
 	
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('ClimaParque/', ClimaParque2),    
+    path('ClimaParque/', ClimaParque2),
+    path('ClimaParque3/', ClimaParque3),    
 ]
