@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from .views import ClimaParque2
 from .views import ClimaParque3
+from cadastro.views import cadastro_pedidos
 	
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('ClimaParque/', ClimaParque2),
-    path('ClimaParque3/', ClimaParque3),    
+    path('ClimaParque3/', ClimaParque3),
+    path('cadastro/', cadastro_pedidos),     
 ]

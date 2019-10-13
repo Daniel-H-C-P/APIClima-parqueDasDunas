@@ -164,18 +164,47 @@ def ClimaParque3(request):
 				continue
 		y +=1		
 
-	prevfinal = []
-	prevorg2 = ''
-	numx = 0
-	for num1 in prevorganizada:
-		prevorg2+= ('\n\nDia {}:'.format(prevorganizada[numx][0][0]))
-		for num2 in num1:
-			prevorg2+= '\n' + (num2[1] + ": " + num2[2])
-		numx +=1
-		prevfinal.append(prevorg2)
-		prevorg2 = ''
+	#prevfinal = []
+	#prevorg2 = ''
+	#numx = 0
+	#for num1 in prevorganizada:
+	#	prevorg2+= ('Dia {}: '.format(prevorganizada[numx][0][0]))
+	#	for num2 in num1:
+	#		prevorg2+= (num2[1] + ": " + num2[2] + ' ')
+	#	numx +=1
+	#	prevfinal.append(prevorg2)
+	#	prevorg2 = ''
 
-	return render(request, 'index.html', {'prev': prevfinal} )
+	dia1 = 'Dia {}: '.format(prevorganizada[0][0][0])
+	for num1 in prevorganizada[0]:
+		dia1 += ' ' + (num1[1] + ": " + num1[2] +',')
+
+	dia2 = 'Dia {}: '.format(prevorganizada[1][0][0])
+	for num2 in prevorganizada[1]:
+		dia2 += ' ' + (num2[1] + ": " + num2[2] +',')
+	
+	dia3 = 'Dia {}: '.format(prevorganizada[2][0][0])
+	for num3 in prevorganizada[2]:
+		dia3 += ' ' + (num3[1] + ": " + num3[2] +',')
+
+	dia4 = 'Dia {}: '.format(prevorganizada[3][0][0])
+	for num4 in prevorganizada[3]:
+		dia4 += ' ' + (num4[1] + ": " + num4[2] +',')
+
+	dia5 = 'Dia {}: '.format(prevorganizada[4][0][0])
+	for num5 in prevorganizada[4]:
+		dia5 += ' ' + (num5[1] + ": " + num5[2] +',')
+
+	meu_contexto = {
+	"clima": climaatual, 
+	"d1": dia1,
+	"d2": dia2,
+	"d3": dia3,
+	"d4": dia4,
+	"d5": dia5,
+	}
+
+	return render(request, 'index.html', meu_contexto)
 
 #def ClimaParqueRender(request):
 #	return render(request, 'index.html')

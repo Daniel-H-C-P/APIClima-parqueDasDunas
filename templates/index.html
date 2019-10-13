@@ -8,10 +8,22 @@
 </head>
 <body>
 {% block content %}
-	<div>"{{ clima }}"</div>
-	{% for tempo in prev %}
-		<p>{{ tempo }}</p>
-	{% endfor %}
+	<p>Clima atual:</p>
+	<ul><li>{{ clima }}</li></ul>
+	</br>
+	<p>Previsão para os próximos dias:</p>
+	<ul>
+		<li>{{ d1 }}</li>
+		</br>
+		<li>{{ d2 }}</li>
+		</br>
+		<li>{{ d3 }}</li>
+		</br>
+		<li>{{ d4 }}</li>
+		</br>
+		<li>{{ d5 }}</li>
+	</ul>
+
 {% endblock %}
 </body>
 </html>
