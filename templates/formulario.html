@@ -4,7 +4,13 @@
 	<title>Formulário de cadastro</title>
 </head>
 <body>
-{% block content %}
+	<div>
+		<p>Cadastre seu email aqui para receber um alerta antes da sua trilha!</p>
+		<p>É recomendado planejar o alerta para uma hora antes da trilha, não minutos antes (o envio do email pode ter um atraso).</p>
+		<p>Após o envio do email seu registro será apagado, portanto não se preocupe de receber spams.</p>
+		<p>Se você quiser acompanhar o clima em tempo real, siga a nossa <a href="http://127.0.0.1:8000/ClimaParque3/">página principal</a>! </p> <!-- Preciso mudar isso na implementação -->
+	</div>
+{% block formulario %}
 <form method="POST"> {% csrf_token %}
 {{ form.as_p }}
 <input type="submit" value="Save" />

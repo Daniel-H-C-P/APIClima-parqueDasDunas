@@ -22,6 +22,6 @@ from cadastro.views import cadastro_pedidos
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('ClimaParque/', ClimaParque2),
-    path('ClimaParque3/', ClimaParque3),
+    path('ClimaParque3/', ClimaParque3, name='clima-parque'),
     path('cadastro/', cadastro_pedidos),     
 ]
