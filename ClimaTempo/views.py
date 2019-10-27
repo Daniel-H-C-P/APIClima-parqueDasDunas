@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 import json
 import re
+import datetime
 #from .leitor import *
 
 """
@@ -176,32 +177,46 @@ def ClimaParque3(request):
 	#	prevorg2 = ''
 
 	dia1 = 'Dia {}: '.format(prevorganizada[0][0][0])
+	dia1a = prevorganizada[0][0][0]
+	hoje = str(datetime.date.today())
+	dia1b = ''
 	for num1 in prevorganizada[0]:
-		dia1 += ' ' + (num1[1] + ": " + num1[2] +',')
+		dia1b += ' ' + (num1[1] + ": " + num1[2] +',')
 
 	dia2 = 'Dia {}: '.format(prevorganizada[1][0][0])
+	dia2b = ''
 	for num2 in prevorganizada[1]:
-		dia2 += ' ' + (num2[1] + ": " + num2[2] +',')
+		dia2b += ' ' + (num2[1] + ": " + num2[2] +',')
 	
 	dia3 = 'Dia {}: '.format(prevorganizada[2][0][0])
+	dia3b = ''
 	for num3 in prevorganizada[2]:
-		dia3 += ' ' + (num3[1] + ": " + num3[2] +',')
+		dia3b += ' ' + (num3[1] + ": " + num3[2] +',')
 
 	dia4 = 'Dia {}: '.format(prevorganizada[3][0][0])
+	dia4b = ''
 	for num4 in prevorganizada[3]:
-		dia4 += ' ' + (num4[1] + ": " + num4[2] +',')
+		dia4b += ' ' + (num4[1] + ": " + num4[2] +',')
 
 	dia5 = 'Dia {}: '.format(prevorganizada[4][0][0])
+	dia5b = ''
 	for num5 in prevorganizada[4]:
-		dia5 += ' ' + (num5[1] + ": " + num5[2] +',')
+		dia5b += ' ' + (num5[1] + ": " + num5[2] +',')
 
 	meu_contexto = {
 	"clima": climaatual, 
 	"d1": dia1,
+	"d1a": dia1a,
+	"hj": hoje,
+	"d1b": dia1b,
 	"d2": dia2,
+	"d2b": dia2b,
 	"d3": dia3,
+	"d3b": dia3b,
 	"d4": dia4,
+	"d4b": dia4b,
 	"d5": dia5,
+	"d5b": dia5b,
 	}
 
 	return render(request, 'index.html', meu_contexto)

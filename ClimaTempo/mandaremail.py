@@ -1,18 +1,24 @@
 import smtplib
+from leitor import climanow, prevhoje
+def mandaremail(nome, contato, dia, hora):
+	meu_email = 'climatemponatal@gmail.com'
+	minha_s = 'IFRn2019'
+	climatual = climanow()
+	prevclima = prevhoje()
 
-meu_email = 'climatemponatal@gmail.com'
-minha_s = 'IFRn2019'
 
-with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
-	smtp.ehlo()
-	smtp.starttls()
-	smtp.ehlo()
+	with smtplib.SMTP('smtp.gmail.com', 587) as smtp:
+		smtp.ehlo()
+		smtp.starttls()
+		smtp.ehlo()
 
-	smtp.login(meu_email, minha_s)
+		smtp.login(meu_email, minha_s)
 
-	assunto = 'texte de email'
-	corpo = 'Email automático enviado'
+		assunto = 'Alerta climático'
+		corpo = 'Olá, {}!\n Esta é a previsão para o Parque das Dunas após seu alerta({} - {}):\n Clima Atual -> {}.\n Previsão -> {}.\n Esperamos que tenha uma boa trilha!\n Equipe ClimaTempo'.format(nome, dia, hora, climatual, prevclima)
 
-	mensagem = f'Subject: {assunto}\n\n{corpo}'
+		mensagem = f'Subject: {assunto}\n\n{corpo}'
 
-	smtp.sendmail( meu_email, meu_email, mensagem.encode('utf-8'))
+		smtp.sendmail( meu_email, contato, mensagem.encode('utf-8'))
+
+mandaremail("Daniel", "dhcp2013@gmail.com", "hoje2", "agora2")

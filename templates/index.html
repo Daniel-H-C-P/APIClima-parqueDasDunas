@@ -19,17 +19,23 @@
 	<p>Clima atual:</p>
 	<ul><li>{{ clima }}</li></ul>
 	</br>
-	<p>Previsão para os próximos dias:</p>
+	<p>Previsão para os próximos dias ou horas:</p>
 	<ul>
-		<li>{{ d1 }}</li>
+		{% if d1a == hj %}
+
+			<li><b>Hoje:</b> {{ d1b }} </li>
+			</br>
+		{% else %}
+			<li><b>{{ d1 }}</b> {{ d1b }} </li>
+			</br>
+		{% endif %}
+		<li><b>{{ d2 }}</b> {{ d2b }} </li>
 		</br>
-		<li>{{ d2 }}</li>
+		<li><b>{{ d3 }}</b> {{ d3b }} </li>
 		</br>
-		<li>{{ d3 }}</li>
+		<li><b>{{ d4 }}</b> {{ d4b }} </li>
 		</br>
-		<li>{{ d4 }}</li>
-		</br>
-		<li>{{ d5 }}</li>
+		<li><b>{{ d5 }}</b> {{ d5b }} </li>
 	</ul>
 
 {% endblock %}
