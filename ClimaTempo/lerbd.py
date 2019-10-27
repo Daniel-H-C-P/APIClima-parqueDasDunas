@@ -29,13 +29,13 @@ lista = c.fetchall() #busca todos os resultados e cria uma lista
 
 for pessoa in lista:
     #print(pessoa)
-    #print(pessoa[0])
+    #print(pessoa[0]) #id
     #print(pessoa[1]) #nome
     #print(pessoa[2]) #contato
     #print(pessoa[3]) #dia
     #print(pessoa[4]) #hora
     
-    ############################## ESTAS DUAS LINHAS MUDAM O BD!!!!
+    ############################## ESTAS DUAS LINHAS MUDAM O BD PELO ID DO OBJETO!!!!
     if pessoa[1] == 'Exemplo 3':
     	c.execute('UPDATE cadastro_emailcliente SET nome = "mudei" WHERE id = {}'.format(int(pessoa[0])))
     	conn.commit()
@@ -50,20 +50,3 @@ for pessoa in lista:
 
 c.close() # fecha a coneção 1
 conn.close() # fecha a coneção 2
-
-
-
-
-
-'''
-
-COMO MUDAR VALORES EM SQLITE3:
-
-UPDATE employees
-SET lastname = 'Smith'
-WHERE employeeid = 3;
-
-'''
-
-
-#Usar isso com num IF após enviar o email.
