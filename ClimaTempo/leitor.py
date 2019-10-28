@@ -80,14 +80,14 @@ def climaprev():
 #climaprev()
 
 def prevhoje():
-	with open('clima5dias.json') as g:
-			data2 = json.load(g)
+	with open('clima5dias.json') as h:
+			data3 = json.load(h)
 		#Lendo o arquivo e criando uma lista
 	numheader = 0
 	previsao = []
 	while numheader < 40:
-		climaprint = (str(data2['list'][numheader]['dt_txt']).split( ))
-		climaprint.append(str(data2['list'][numheader]['weather'][0]['description']))
+		climaprint = (str(data3['list'][numheader]['dt_txt']).split( ))
+		climaprint.append(str(data3['list'][numheader]['weather'][0]['description']))
 		previsao.append(climaprint) 
 		numheader +=1
 		

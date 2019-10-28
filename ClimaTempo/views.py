@@ -31,7 +31,7 @@ def ClimaParque(request):
 	#Tirar a minha chave daqui e colocar em um arquivo com .gitignore
 """
 
-
+"""
 def ClimaParque2(request):
 	########### variáveis chave: 'climaatual', 'dia1', 'dia2', 'dia3', 'dia4', 'dia5'.
 
@@ -83,6 +83,7 @@ def ClimaParque2(request):
 	#exemplo de exibição das informações:
 	#print("\nPrevisão para os próximos dias")
 	"""
+"""
 	dia1 = 'Dia {}'.format(prevorganizada[0][0][0])
 	for num1 in prevorganizada[0]:
 		dia1 += '\n' + (num1[1] + ": " + num1[2])
@@ -103,6 +104,7 @@ def ClimaParque2(request):
 	for num5 in prevorganizada[4]:
 		dia5 += '\n' + (num5[1] + ": " + num5[2])
 	"""
+"""
 	prevfinal = ''
 	numx = 0
 	for num1 in prevorganizada:
@@ -116,6 +118,11 @@ def ClimaParque2(request):
 
 #def ClimaParqueRender(request):
 #	return render(request, 'index.html')
+"""
+
+
+
+
 
 def ClimaParque3(request):
 	########### variáveis chave: 'climaatual', 'dia1', 'dia2', 'dia3', 'dia4', 'dia5'.

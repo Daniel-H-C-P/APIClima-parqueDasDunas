@@ -1,6 +1,6 @@
 import smtplib
 from leitor import climanow, prevhoje
-def mandaremail(nome, contato, dia, hora):
+def mandaemail(nome, contato, dia, hora):
 	meu_email = 'climatemponatal@gmail.com'
 	minha_s = 'IFRn2019'
 	climatual = climanow()
@@ -21,4 +21,4 @@ def mandaremail(nome, contato, dia, hora):
 
 		smtp.sendmail( meu_email, contato, mensagem.encode('utf-8'))
 
-mandaremail("Daniel", "dhcp2013@gmail.com", "hoje2", "agora2")
+# mandaremail("Daniel", "dhcp2013@gmail.com", "hoje2", "agora2")
