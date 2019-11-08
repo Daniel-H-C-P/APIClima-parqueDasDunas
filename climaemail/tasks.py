@@ -1,10 +1,11 @@
 
-'''
+
 
 # ApiClima.../climaemail/tasks.py
 
-from celery import Celery, shared_task
-from celery.schedules import crontab
+from celery import Celery, shared_task, task
+#from .funcoesback import pegaClima 
+#from celery.schedules import crontab
 ##############
 import requests
 import time
@@ -12,6 +13,7 @@ climaAgora = requests.get('https://api.openweathermap.org/data/2.5/weather?id=33
 clima5dias = requests.get('https://api.openweathermap.org/data/2.5/forecast?id=3394023&lang=pt&APPID=9e70fbffdde1b3cfcb57ddd5f3a250b4').json()
 ##############
 
+'''
 @app.on_after_configure.connect
 def setup_periodic_tasks(sender, **kwargs):
     # Calls test('hello') every 10 seconds.
@@ -25,8 +27,9 @@ def setup_periodic_tasks(sender, **kwargs):
         crontab(minute='*/5'),
         print('task 2 funcionando'),
     )
+'''
 
-@app.task
+@task
 def pegaClima():
 	#executando a primeira querry:
 	climaAgora
@@ -38,11 +41,11 @@ def pegaClima():
 	#criando o segundo arquivo json:
 	with open('clima5dias.json', 'w') as fh2:
 		fh2.write(str(clima5dias).replace("'", '"', 10000))
-
-	print('pesquisa completa!')
-
-	'''
-
+#loop do arquivo:
+pegaClima()
+print('pesquisa completa!')
+	
+'''
 from celery import Celery
 from celery.schedules import crontab
 
@@ -65,3 +68,5 @@ def setup_periodic_tasks(sender, **kwargs):
 @app.task
 def test(arg):
     print(arg)
+
+'''

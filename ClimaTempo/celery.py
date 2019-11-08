@@ -35,7 +35,7 @@ def debug_task(self):
     print('Request: {0!r}'.format(self.request))
 
 
-
+'''
 @app.on_after_configure.connect
 def setup_periodic_tasks(sender, **kwargs):
     # Calls test('hello') every 10 seconds.
@@ -49,6 +49,7 @@ def setup_periodic_tasks(sender, **kwargs):
         crontab(minute='*/5'),
         print('task 2 funcionando'),
     )
+
 
 @app.task
 def pegaClima():
@@ -65,3 +66,4 @@ def pegaClima():
 
 	print('pesquisa completa!')
 
+'''
