@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cadastro',
     'climaemail',
+    'django_celery_beat',
 ]
 
 MIDDLEWARE = [
@@ -107,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en'
 
-TIME_ZONE = 'UTC' #'America/Recife'
+TIME_ZONE = 'America/Recife'
 
 USE_I18N = True
 
@@ -126,7 +127,7 @@ STATIC_URL = '/static/'
 # celery
 CELERY_BROKER_URL = 'redis://localhost:6379' #6379
 #CELERY_ENABLE_UTC = True
-#CELERY_TIMEZONE = TIME_ZONE #'America/Recife'
+CELERY_TIMEZONE = TIME_ZONE #'America/Recife'
 CELERY_RESULT_BACKEND = 'redis://localhost:6379' #6379
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
