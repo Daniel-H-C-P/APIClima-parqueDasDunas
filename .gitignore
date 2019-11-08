@@ -3,3 +3,5 @@ ClimaTempo/climaAgora.json
 ClimaTempo/clima5dias.json
 db.sqlite3
 ClimaTempo/minhachaveOW.py
+climaAgora.json
+clima5dias.json

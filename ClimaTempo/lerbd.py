@@ -4,7 +4,7 @@ import datetime
 import json 
 #Para abrir o arquivo climaAgora
 def climanow():
-	with open('climaAgora.json') as f:
+	with open('/home/daniel/webdev/tcc2019/APIClima-parqueDasDunas/ClimaTempo/climaAgora.json') as f:
 		data = json.load(f)
 	#Lendo o arquivo
 	climaatual = data['weather'][0]['description']
@@ -67,7 +67,7 @@ def climaprev():
 #climaprev()
 
 def prevhoje():
-	with open('clima5dias.json') as g:
+	with open('/home/daniel/webdev/tcc2019/APIClima-parqueDasDunas/ClimaTempo/clima5dias.json') as g:
 			data2 = json.load(g)
 		#Lendo o arquivo e criando uma lista
 	numheader = 0
@@ -152,7 +152,7 @@ def mandaemail(nome, contato, dia, hora, climatual, prevclima):
 #Para mudar de pasta
 import os
 # print(os.path.abspath(os.curdir)) #só pra checar o dir base
-os.chdir('..')
+os.chdir('/home/daniel/webdev/tcc2019/APIClima-parqueDasDunas/')
 # print(os.path.abspath(os.curdir)) #só pra checar o dir acima
 ##########################################
 '''

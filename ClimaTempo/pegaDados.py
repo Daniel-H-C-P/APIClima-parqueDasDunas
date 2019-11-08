@@ -13,12 +13,12 @@ def pegaClima():
 	#executando a primeira querry:
 	climaAgora
 	#criando o primeiro arquivo json:
-	with open('climaAgora.json', 'w') as fh1:
+	with open('/home/daniel/webdev/tcc2019/APIClima-parqueDasDunas/ClimaTempo/climaAgora.json', 'w') as fh1:
 		fh1.write(str(climaAgora).replace("'", '"', 1000))
 	#executando a segunda querry:
 	clima5dias
 	#criando o segundo arquivo json:
-	with open('clima5dias.json', 'w') as fh2:
+	with open('/home/daniel/webdev/tcc2019/APIClima-parqueDasDunas/ClimaTempo/clima5dias.json', 'w') as fh2:
 		fh2.write(str(clima5dias).replace("'", '"', 10000))
 #loop do arquivo:
 pegaClima()
