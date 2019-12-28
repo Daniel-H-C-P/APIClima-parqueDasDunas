@@ -6,5 +6,5 @@ class EmailCliente(models.Model):
 	contato	= models.EmailField(max_length=254)
 	dia		= models.DateField() #input_formats=['%d/%m/%Y']
 	hora	= models.TimeField() #input_formats=['%H:%M']
-	mandado	= models.BooleanField(default=False)
+	mandado	= models.BooleanField(default=False) 
 		
