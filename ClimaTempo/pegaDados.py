@@ -4,8 +4,6 @@ from minhachaveOW import myapikey
 
 climaAgora = requests.get('https://api.openweathermap.org/data/2.5/weather?id=3394023&lang=pt&APPID=myapikey').json()
 clima5dias = requests.get('https://api.openweathermap.org/data/2.5/forecast?id=3394023&lang=pt&APPID=myapikey').json()
-#climaAgora = requests.get('https://api.openweathermap.org/data/2.5/weather?id=3394023&APPID={myapikey}').json()
-#clima5dias = requests.get('https://api.openweathermap.org/data/2.5/forecast?id=3394023&APPID={myapikey}').json()
 executar = 1
 num = 1	
 
