@@ -1,1 +1,1 @@
-default_app_config = 'climaemail.apps.ClimaemailConfig'
+default_app_config = 'climaemail.apps.ClimaemailConfig' 
