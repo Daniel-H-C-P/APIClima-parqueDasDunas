@@ -122,9 +122,10 @@ climatual = climanow()
 prevclima = prevhoje()
 
 import smtplib
+from minhachaveOW import meuemail, minhasenha
 def mandaemail(nome, contato, dia, hora, climatual, prevclima):
-	meu_email = #colocar email
-	minha_s = #colocar senha
+	meu_email = meuemail
+	minha_s = minhasenha
 	#climatual = climanow()
 	#prevclima = prevhoje()
 
