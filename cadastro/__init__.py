@@ -1,2 +1,2 @@
 
-default_app_config = 'cadastro.apps.CadastroConfig'
+default_app_config = 'cadastro.apps.CadastroConfig' 
