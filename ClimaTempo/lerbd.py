@@ -123,8 +123,8 @@ prevclima = prevhoje()
 
 import smtplib
 def mandaemail(nome, contato, dia, hora, climatual, prevclima):
-	meu_email = 'climatemponatal@gmail.com'
-	minha_s = 'IFRn2019'
+	meu_email = #colocar email
+	minha_s = #colocar senha
 	#climatual = climanow()
 	#prevclima = prevhoje()
 
