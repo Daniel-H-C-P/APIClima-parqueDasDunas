@@ -172,7 +172,7 @@ def ClimaParque3(request):
 				continue
 		y +=1		
 
-	#prevfinal = []
+	#prevfinal = [] 
 	#prevorg2 = ''
 	#numx = 0
 	#for num1 in prevorganizada:
